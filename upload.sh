@@ -36,6 +36,8 @@ if [ -z "$RSYNC_KEY" ]; then
         echo "No private key specified!"
         exit 1
     fi
+    echo $PLUGIN_KEY
+    PLUGIN_KEY=`echo $PLUGIN_KEY |  tr "|" "\n"`
     SSH_KEY=$PLUGIN_KEY
 fi
 
